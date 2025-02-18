@@ -1,0 +1,301 @@
+/* ทำให้ Footer อยู่ล่างสุดเสมอ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* ทำให้ body มีความสูงเต็มหน้าจอ */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* ส่วน Header */
+
+header {
+    background: linear-gradient(90deg, #5c26db, #556270);
+    color: rgb(72, 171, 228);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+
+/* แถบเมนู */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: rgb(9, 201, 175);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+/* เอฟเฟกต์ Hover */
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+
+/* ทำให้ Section ขยายเต็มพื้นที่ */
+
+section {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* สไตล์ของ Footer */
+
+footer {
+    background: #222;
+    color: rgb(0, 247, 255);
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+/* อนิเมชั่นเลื่อนลงมา */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background: #444;
+}
+
+nav ul li {
+    display: inline;
+    padding: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: yellow;
+    /* เปลี่ยนสีเมื่อวางเมาส์ */
+}
+
+section {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+/* อนิเมชั่น Fade-in */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bike {
+    display: inline-block;
+    background: rgb(42, 252, 234);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    text-align: center;
+    width: 250px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+
+/* อนิเมชั่น Slide-in */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* อนิเมชั่นเมื่อ hover ที่การ์ดรถ */
+
+.bike:hover {
+    transform: scale(1.05);
+}
+
+.bike img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.bike {
+    display: inline-block;
+    background: rgb(141, 227, 230);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    text-align: center;
+    width: 250px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.bike:hover {
+    transform: scale(1.05);
+}
+
+
+/* Lightbox Effect */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.details-button:hover {
+    background-color: #45a049;
+}
+
+
+/* ปรับปรุงให้ส่วนแสดงรายละเอียดอยู่กลางหน้าจอ */
+
+.detail-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* พื้นหลังมืดเพื่อให้เด่น */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.detail-content {
+    background-color: rgb(6, 247, 255);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
